@@ -40,7 +40,7 @@
  echo "\033[1;32m[\033[1;37m~\033[1;32m] Prosses Run: \033[1;33m".date("Y/m/d H:i:s")."\n"; 
  echo "\033[1;32m[\033[1;37m@\033[1;32m] Refresh the Suff[\033[1;37m5\033[1;32m]\033[1;37m Seconds\n\n"; 
  while (1){ 
-   $channel = $argv[1]; 
+   $channel = $argv[0]; 
    $t = file_get_contents($channel); 
    $pattern = '/yt-uix-tooltip" title="(.*)" tabindex/'; 
    preg_match($pattern, $t, $matches, PREG_OFFSET_CAPTURE); 
