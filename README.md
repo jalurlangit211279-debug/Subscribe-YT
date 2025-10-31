@@ -1,5 +1,5 @@
 # Subscribe-YT
-Ini Adalah TOOL Untuk Subscribe Youtube
+Ini Adalah TOOL Untuk Subscribe Youtube dengan menggunakan kode PHP
 
 # Install
 #pkg install php 
