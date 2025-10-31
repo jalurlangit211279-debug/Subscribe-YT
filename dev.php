@@ -40,7 +40,11 @@
  echo "\033[1;32m[\033[1;37m~\033[1;32m] Prosses Run: \033[1;33m".date("Y/m/d H:i:s")."\n"; 
  echo "\033[1;32m[\033[1;37m@\033[1;32m] Refresh the Suff[\033[1;37m5\033[1;32m]\033[1;37m Seconds\n\n"; 
  while (1){ 
-   $channel = $argv[1]; 
+   $channel_id = $argv[1]" ID_SALURAN_ANDA " ;
+ $api_key = " KUNCI_API " ;
+ $api_response = file_get_contents ( ' https://www.googleapis.com/youtube/v3/channels?part=statistics&id= ' . $channel_id . ' &fields=items/statistics/subscriberCount&key= ' . $api_key );
+ $api_response_decoded = json_decode ($api_response , true);
+ echo  $api_response_decoded [ ' items ' ][ 0 ][ ' statistics ' ][ ' subscriberCount ' ];
    $t = file_get_contents($channel); 
    $pattern = '/yt-uix-tooltip" title="(.*)" tabindex/'; 
    preg_match($pattern, $t, $matches, PREG_OFFSET_CAPTURE); 
@@ -49,7 +53,7 @@ $channel_id = " ID_SALURAN_ANDA " ;
  $api_response = file_get_contents ( ' https://www.googleapis.com/youtube/v3/channels?part=statistics&id= ' . $channel_id . ' &fields=items/statistics/subscriberCount&key= ' . $api_key );
  $api_response_decoded = json_decode ($api_response , true);
  echo  $api_response_decoded [ ' items ' ][ 0 ][ ' statistics ' ][ ' subscriberCount ' ];
-   echo "\033[1;32m[\033[1;37m+\033[1;32m]\033[1;37m Jumlah >>>\033[1;32m ".$matches[1]." \033[1;37m<<< \033[1;32mSubscribers\n"; 
+   echo "\033[1;32m[\033[1;37m+\033[1;32m]\033[1;37m Jumlah >>>\033[1;32m ".$chanel-subscribeCount[1]." \033[1;37m<<< \033[1;32mSubscribers\n"; 
    for($s=5; $s >=0; $s--){ 
    echo "Sedang Berjalan... [ ${s}s ] \r"; 
    sleep(1); 
