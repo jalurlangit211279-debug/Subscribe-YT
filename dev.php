@@ -40,11 +40,11 @@
  echo "\033[1;32m[\033[1;37m~\033[1;32m] Prosses Run: \033[1;33m".date("Y/m/d H:i:s")."\n"; 
  echo "\033[1;32m[\033[1;37m@\033[1;32m] Refresh the Suff[\033[1;37m5\033[1;32m]\033[1;37m Seconds\n\n"; 
  while (1){ 
-   $channel = $argv[0]; 
+   $channel = $argv[1]; 
    $t = file_get_contents($channel); 
    $pattern = '/yt-uix-tooltip" title="(.*)" tabindex/'; 
    preg_match($pattern, $t, $matches, PREG_OFFSET_CAPTURE); 
-   echo "\033[1;32m[\033[1;37m+\033[1;32m]\033[1;37m Jumlah >>>\033[1;32m ".$matches[O]." \033[1;37m<<< \033[1;32mSubscribers\n"; 
+   echo "\033[1;32m[\033[1;37m+\033[1;32m]\033[1;37m Jumlah >>>\033[1;32m ".$matches[1]." \033[1;37m<<< \033[1;32mSubscribers\n"; 
    for($s=5; $s >=0; $s--){ 
    echo "Sedang Berjalan... [ ${s}s ] \r"; 
    sleep(1); 
