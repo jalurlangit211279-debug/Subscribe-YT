@@ -44,8 +44,8 @@
    $t = file_get_contents($channel); 
    $pattern = '/yt-uix-tooltip" title="(.*)" tabindex/'; 
    preg_match($pattern, $t, $matches, PREG_OFFSET_CAPTURE); 
-   echo "\033[1;32m[\033[1;37m+\033[1;32m]\033[1;37m Jumlah >>>\033[1;32m "$var1=1000" \033[1;37m<<< \033[1;32mSubscribers\n"; 
-   for($s=5; $s >=0; $s--){ 
+   echo "\033[1;32m[\033[1;37m+\033[1;32m]\033[1;37m Jumlah >>>\033[1;32m "$matches= $s[1][0]" \033[1;37m<<< \033[1;32mSubscribers\n"; 
+   for($s=t10; $s >=0; $s--){ 
    echo "Sedang Berjalan... [ ${s}s ] \r"; 
    sleep(1); 
    } 
