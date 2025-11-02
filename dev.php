@@ -42,7 +42,7 @@
  while (1){ 
    $channel = $argv[1]; 
    $t = file_get_contents($channel); 
-   $pattern = "/yt-uix-tooltip" title="(.*)" tabindex/'; 
+   $pattern = '/yt-uix-tooltip" title="(.*)" tabindex/'; 
    preg_match($pattern, $t, $matches, PREG_OFFSET_CAPTURE); 
    echo "\033[1;32m[\033[1;37m+\033[1;32m]\033[1;37m Jumlah >>>\033[1;32m "($matches)[0--.....1000]." \033[1;37m<<< \033[1;32mSubscribers\n"; 
    for($s=5; $s >=0; $s--){ 
