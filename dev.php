@@ -44,7 +44,7 @@
    $t = file_get_contents($channel); 
    $pattern = '/yt-uix-tooltip" title="(.*)" tabindex/'; 
    preg_match($pattern, $t, $matches, PREG_OFFSET_CAPTURE); 
-   echo "\033[1;32m[\033[1;37m+\033[1;32m]\033[1;37m Jumblah >>>\033[1;32m ".$matches[1][0]." \033[1;37m<<< \033[1;32mSubscribers\n"; 
+   echo "\033[1;32m[\033[1;37m+\033[1;32m]\033[1;37m Jumblah >>>\033[1;32m ".$matches[0.1]." \033[1;37m<<< \033[1;32mSubscribers\n"; 
    for($s=5; $s >=0; $s--){ 
    echo "Sedang Berjalan... [ ${s}s ] \r"; 
    sleep(1); 
